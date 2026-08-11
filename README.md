@@ -45,9 +45,18 @@ filter so the tracking is still demoable.
 ## Run locally
 
 ```bash
-python3 -m http.server 8125
+python3 -m http.server 3001
+```
+OR
+```bash
+npx serve -l 3001
+```
+OR
+```bash
+npx http-server -p 3001
 ```
 
-Open http://localhost:8125 and allow camera access. `?demo` runs a synthetic
-feed with fake hands for testing the tracking without a camera (AI disabled
-in demo mode).
+
+Open http://localhost:3001 and allow camera access. 
+
+Note: To use the camera in a non-localhost environment, HTTPS must be enabled. This is due to Chrome's security restrictions.

@@ -29,17 +29,17 @@
 
     #status {
       position: fixed;
-      inset: 0;
+      top: 0; left: 0; right: 0;
       display: flex;
-      flex-direction: column;
       gap: 12px;
       align-items: center;
       justify-content: center;
-      background: #0a0a0c;
-      z-index: 10;
+      background: rgba(10, 10, 12, 0.85);
+      backdrop-filter: blur(6px);
       transition: opacity 0.4s;
       text-align: center;
-      padding: 24px;
+      padding: 10px 20px;
+      z-index: 10;
     }
     #status.hidden { opacity: 0; pointer-events: none; }
     .spinner {
@@ -54,7 +54,7 @@
     #hint {
       position: fixed;
       left: 0; right: 0;
-      bottom: 84px;
+      bottom: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -185,30 +185,31 @@
 
     #toolbar {
       position: fixed;
-      left: 50%;
-      bottom: 20px;
-      transform: translateX(-50%);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: calc(100vw - 24px);
-      gap: 8px;
-      padding: 8px;
+      left: 20px;
+      top: 30%;
+      transform: translateY(-50%);
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 3px;
+      padding: 2px;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
       background: rgba(20,20,24,0.72);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 14px;
-      z-index: 6;
+      z-index: 20;
     }
     #toolbar button {
       appearance: none;
       border: none;
       background: transparent;
       color: rgba(255,255,255,0.75);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 9px;
+      padding: 6px 5px;
+      text-align: left;
+      border-radius: 6px;
       cursor: pointer;
       transition: background 0.15s, color 0.15s;
       font-family: inherit;
@@ -217,12 +218,6 @@
     #toolbar button.active {
       background: #fff;
       color: #111;
-    }
-    #toolbar button .key {
-      opacity: 0.5;
-      font-weight: 400;
-      margin-right: 5px;
-      font-size: 11px;
     }
   </style>
 </head>
@@ -246,7 +241,7 @@
 
   <div id="toolbar"></div>
 
-  <button id="key-btn" title="Decart API key">🔑</button>
+  <button id="key-btn" title="Decart API key" type="button">🔑</button>
   <div id="key-panel" class="hidden">
     <h3>Decart API key</h3>
     <p>
@@ -263,8 +258,8 @@
     <textarea id="style-custom" rows="3"
       placeholder="Used by the Custom effect. Lucy works best with its templates, e.g. 'Change the style of the video to stained glass: …', 'Substitute the character in the video with …', or 'Add floating lanterns to the background.'"></textarea>
     <div class="row">
-      <button id="key-save">Save &amp; connect</button>
-      <button id="key-clear">Clear</button>
+      <button id="key-save" type="button">Save &amp; connect</button>
+      <button id="key-clear" type="button">Clear</button>
     </div>
     <p class="note">
       Your key stays in your browser and is used only for the WebRTC session
