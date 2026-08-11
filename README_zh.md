@@ -1,12 +1,13 @@
 [en](/README.md) [简体中文](/README_zh.md)
 
+
 # Finger Frame RealTime Live AI 实时直播AI风格转绘
 
 **立刻体验: https://jinwyp.github.io/finger-frame-effect/**
 
-[zh](/README_zh.md)举起双手，用手指框住一个方框——即可看到**实时AI世界在框内**，由30fps生成，使用
+面对摄像头举起双手，用手指框住一个方框. 即可看到**实时AI世界在框内**，由30fps生成，使用
 [Decart Lucy 2.5](https://docs.platform.decart.ai/models/realtime/lucy-2.5)
-(realtime video-to-video over WebRTC)。会*跟随*你：眨眼它也眨眼，挥手它也挥手——模型延迟仅为几十毫秒。
+(realtime video-to-video over WebRTC)。会跟随你：眨眼它也眨眼，挥手它也挥手.模型延迟仅为几十毫秒。
 
 
 ![Example: live AI world inside the finger frame](examples/lucy.gif)
