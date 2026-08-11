@@ -34,137 +34,273 @@ const EFFECTS = [
     id: "movie3d",
     label: "3D Movie",
     prompt:
-      "Change the style of the video to a 3D animated movie: stylized CGI " +
-      "animation, the person as an animated character with expressive big " +
-      "eyes and smooth skin, soft cinematic lighting.",
+      `Change the style of the video to a 3D animated movie: stylized CGI
+      animation, the person as an animated character with expressive big eyes,
+      smooth skin, and soft cinematic lighting.`,
   },
   {
     id: "anime",
     label: "Anime",
     prompt:
-      "Change the style of the video to hand-drawn anime: clean black line " +
-      "art, flat cel shading, vibrant colors, large expressive eyes.",
+      `Change the style of the video to hand-drawn anime: clean black line art,
+      flat cel shading, vibrant colors, large expressive eyes, and energetic but
+      clean composition.`,
   },
   {
     id: "comic",
     label: "Comic",
     prompt:
-      "Change the style of the video to a comic book page: bold black ink " +
-      "outlines, flat cel colors, halftone dot shading, action lines and " +
-      "dynamic motion effects.",
-  },
-  {
-    id: "pixel",
-    label: "Pixel Art",
-    prompt:
-      "Change the style of the video to retro pixel art: low-resolution " +
-      "8-bit game graphics, chunky square pixels, limited bright palette, " +
-      "blocky character shapes.",
-  },
-  {
-    id: "cyberpunk",
-    label: "Cyberpunk",
-    prompt:
-      "Change the style of the video to neon cyberpunk: glowing pink and " +
-      "cyan neon light on the person and walls, rain-slick reflective " +
-      "surfaces, holographic signs in the background.",
-  },
-  {
-    id: "watercolor",
-    label: "Watercolor",
-    prompt:
-      "Change the style of the video to a watercolor painting: soft loose " +
-      "brushstrokes, gentle color bleeds, visible paper texture, muted " +
-      "pastel palette.",
-  },
-  {
-    id: "lego",
-    label: "LEGO",
-    prompt:
-      "Change the style of the video to a LEGO stop-motion animation: the " +
-      "person is a yellow LEGO minifigure with a cylindrical head, painted " +
-      "face, and claw hands, and the room is built entirely from glossy " +
-      "plastic LEGO bricks with visible round studs on every surface.",
+      `Change the style of the video to a comic book page: bold black ink outlines,
+      flat cel colors, dynamic action lines, halftone textures, and cinematic motion
+      effects.`,
   },
   {
     id: "ghibli",
     label: "Ghibli",
     prompt:
-      "Change the style of the video to Studio Ghibli animation: soft " +
-      "watercolor backgrounds, gentle pastel colors, whimsical hand-drawn " +
-      "characters with small expressive eyes and flowing hair, warm " +
-      "nostalgic lighting.",
+      `Change the style of the video to Studio Ghibli animation: soft watercolor
+      backgrounds, gentle pastel colors, whimsical hand-drawn characters, small
+      expressive eyes, flowing hair, and warm nostalgic light.`,
   },
   {
-    id: "film",
-    label: "Cinematic",
+    id: "watercolor",
+    label: "Watercolor",
     prompt:
-      "Change the style of the video to a blockbuster film: cinematic color " +
-      "grading, anamorphic lens flares, shallow depth of field, subtle film " +
-      "grain, Hollywood movie lighting.",
+      "Change the style of the video to a watercolor painting: loose brushstrokes, " +
+      "gentle color bleeds, visible paper texture, muted pastel palette, and airy " +
+      "negative space.",
   },
   {
-    id: "vaporwave",
-    label: "Vaporwave",
+    id: "retro-watercolor",
+    label: "Retro Watercolor",
     prompt:
-      "Change the style of the video to vaporwave: retro 80s aesthetic, neon " +
-      "pink and cyan gradients, chrome grid floors, glitch effects and soft " +
-      "scanlines, palm tree silhouettes.",
+      "Change the style of the video to a 1950s retro concept watercolor illustration: " +
+      "clean high-key paper background, warm cream tones, airy composition, soft dry " +
+      "brush strokes, simplified character shapes, and painterly pastel colors with " +
+      "gentle form shadows.",
   },
   {
-    id: "clay",
-    label: "Claymation",
+    id: "ink-wash",
+    label: "Ink Wash",
     prompt:
-      "Change the style of the video to claymation: plasticine clay figures " +
-      "with visible finger-print textures and glossy clay surfaces, " +
-      "stop-motion handcrafted look.",
-  },
-  {
-    id: "noir",
-    label: "Film Noir",
-    prompt:
-      "Change the style of the video to classic film noir: black and white " +
-      "with deep shadows, harsh venetian-blind light streaks, foggy alleys, " +
-      "moody detective-atmosphere.",
-  },
-  {
-    id: "oil",
-    label: "Oil Painting",
-    prompt:
-      "Change the style of the video to an oil painting: thick textured " +
-      "impasto brushstrokes, rich glowing colors, visible canvas weave, " +
-      "gallery lighting.",
+      "Change the style of the video to traditional ink wash painting: black ink with " +
+      "five-valued tonal depth, dry brush, feathered edges, natural ink bleed, lots of " +
+      "negative space, subtle warm seal accent, and a calm hand-painted feel.",
   },
   {
     id: "sketch",
     label: "Pencil Sketch",
     prompt:
-      "Change the style of the video to a pencil sketch: hand-drawn graphite " +
-      "line art with soft shading and cross-hatching, white paper background.",
+      "Change the style of the video to a pencil sketch: hand-drawn graphite line art, " +
+      "soft shading, cross-hatching, light paper texture, and a loose but readable " +
+      "illustration style.",
+  },
+  {
+    id: "ballpoint-scribble",
+    label: "Ballpoint Scribble",
+    prompt:
+      "Change the style of the video to a single-color ballpoint pen scribble: quick " +
+      "loose black line work, energetic crosshatching, random looping strokes, white " +
+      "paper background, and an improvised art-sketch personality.",
+  },
+  {
+    id: "marker-infographic",
+    label: "Marker Doodle",
+    prompt:
+      "Change the style of the video to a black marker doodle infographic: clean " +
+      "hand-drawn panels, black outline characters, white interiors, minimal monochrome " +
+      "composition, scattered arrows, and one orange accent key detail in each panel.",
+  },
+  {
+    id: "family-crayon",
+    label: "Crayon Family",
+    prompt:
+      "Change the style of the video to a family crayon postcard on bright white paper: " +
+      "ordinary adult black line art, messy childlike wax crayon scribble, large white " +
+      "gaps, wobbly outlines, uneven facial features, colorful family scene, and a " +
+      "handmade warm amateur poster feeling without polished illustration.",
+  },
+  {
+    id: "kid-crayon",
+    label: "Kid Crayon",
+    prompt:
+      "Change the style of the video to a 5-year-old's bad drawing with crayons on white " +
+      "paper: wobbly outlines, clumsy proportions, mismatched facial features, bright " +
+      "primary colors, large white gaps, scribble strokes in random directions, and a " +
+      "genuinely crude childlike composition.",
+  },
+  {
+    id: "crayon-photo",
+    label: "Crayon Photo",
+    prompt:
+      "Change the style of the video to a real photo of a child drawing with wax crayons " +
+      "on slightly wrinkled white printer paper: real paper texture, bright daylight, " +
+      "visible crayon strokes, sparse uneven fills, white paper showing through, bright " +
+      "primary colors, and a genuine hand-drawn amateur page feel.",
+  },
+  {
+    id: "ms-paint",
+    label: "MS Paint Bad",
+    prompt:
+      "Change the style of the video to an intentionally bad MS Paint doodle: crooked " +
+      "wobbly lines, mismatched proportions, rough jagged color blocks, low-quality " +
+      "digital painterly ugliness, pure white background, and a deliberately awkward " +
+      "amateur look.",
+  },
+  {
+    id: "xkcd",
+    label: "XKCD Explainer",
+    prompt:
+      "Change the style of the video to an xkcd-style black-and-white stick-figure " +
+      "explanation comic: simple line drawings, minimal figures, clean hand-drawn " +
+      "black pen outlines, white paper, grid panel layout, and a humorous educational " +
+      "comic-book structure.",
+  },
+  {
+    id: "pixel",
+    label: "Pixel Art",
+    prompt:
+      "Change the style of the video to retro pixel art: low-resolution 8-bit or 16-bit " +
+      "game graphics, hard square pixels, limited palette, visible dithering, sharp " +
+      "edges, and a genuine old-school sprite aesthetic.",
+  },
+  {
+    id: "cyberpunk",
+    label: "Cyberpunk",
+    prompt:
+      "Change the style of the video to neon cyberpunk: glowing pink and cyan lights, " +
+      "wet reflective surfaces, sleek futuristic outfit details, holographic signage, " +
+      "and a moody night-city atmosphere.",
+  },
+  {
+    id: "film",
+    label: "Cinematic",
+    prompt:
+      "Change the style of the video to a blockbuster film: cinematic color grading, " +
+      "soft focus depth, subtle film grain, anamorphic lens flares, and polished " +
+      "Hollywood lighting.",
+  },
+  {
+    id: "vaporwave",
+    label: "Vaporwave",
+    prompt:
+      "Change the style of the video to vaporwave: retro 80s color palette, neon pink " +
+      "and cyan gradients, chrome surfaces, palm silhouettes, soft scanlines, and a " +
+      "dreamy nostalgic synthwave mood.",
+  },
+  {
+    id: "clay",
+    label: "Claymation",
+    prompt:
+      "Change the style of the video to claymation: plasticine figures with visible " +
+      "fingerprints, glossy handmade surfaces, stop-motion charm, and a tactile " +
+      "handcrafted studio feel.",
+  },
+  {
+    id: "noir",
+    label: "Film Noir",
+    prompt:
+      "Change the style of the video to classic film noir: stark black-and-white contrast, " +
+      "deep shadows, venetian light streaks, foggy alley atmosphere, and moody detective " +
+      "drama.",
+  },
+  {
+    id: "oil",
+    label: "Oil Painting",
+    prompt:
+      "Change the style of the video to an oil painting: thick textured impasto " +
+      "brushstrokes, rich glowing colors, visible canvas weave, and a gallery-lit " +
+      "classical finish.",
   },
   {
     id: "lowpoly",
     label: "Low Poly",
     prompt:
-      "Change the style of the video to low poly 3D art: flat triangular " +
-      "facets, clean geometric surfaces, soft studio lighting, videogame " +
-      "aesthetic.",
+      "Change the style of the video to low poly 3D art: geometric triangular facets, " +
+      "clean minimal surfaces, soft studio light, and a polished videogame aesthetic.",
   },
   {
     id: "neon",
     label: "Neon Sign",
     prompt:
-      "Change the style of the video to glowing neon sign art: the person " +
-      "and room outlined in luminous neon tubes, electric colors on dark " +
-      "walls.",
+      "Change the style of the video to glowing neon sign art: bright luminous tube " +
+      "outlines, electric colors, dramatic dark background, and a vivid nightlife poster " +
+      "mood.",
   },
   {
     id: "stainedglass",
     label: "Stained Glass",
     prompt:
-      "Change the style of the video to stained glass: vivid glass panels " +
-      "separated by dark leading lines, light glowing through each piece, " +
-      "cathedral window look.",
+      "Change the style of the video to stained glass: colorful glass panels, dark lead " +
+      "lines, glowing light passing through each piece, and a cathedral window feeling.",
+  },
+  {
+    id: "soft-vinyl",
+    label: "Soft Vinyl",
+    prompt:
+      "Change the style of the video to a soft vinyl designer toy render: smooth matte " +
+      "soft-vinyl surfaces, playful exaggerated proportions, oversized nose, tiny sleepy " +
+      "eyes, streetwear outfit, and a warm pastel studio background.",
+  },
+  {
+    id: "nordic-paper",
+    label: "Paper Folk",
+    prompt:
+      "Change the style of the video to a Nordic paper-craft folk artwork: layered sculpted " +
+      "paper forms, warm earthy palette, soft shadowing, rounded three-dimensional shapes, " +
+      "simple folk motifs, and a handcrafted editorial illustration mood.",
+  },
+  {
+    id: "nordic-storybook",
+    label: "Nordic Storybook",
+    prompt:
+      "Change the style of the video to a modern Scandinavian picture-book illustration: " +
+      "soft gouache texture, paper grain throughout, cozy limited palette of cream, blue, " +
+      "mustard, and coral, long slim character proportions, and tender storybook charm.",
+  },
+  {
+    id: "gouache-spotlight",
+    label: "Gouache Spotlight",
+    prompt:
+      "Change the style of the video to a modern animated-feature gouache concept art: " +
+      "full-color matte background, soft spotlight glow behind the character, visible " +
+      "dry-brush marks, oversized expressive eyes, simplified shapes, and premium " +
+      "painted storybook styling.",
+  },
+  {
+    id: "inked-storybook",
+    label: "Inked Storybook",
+    prompt:
+      "Change the style of the video to an expressive inked storybook character: bold loose " +
+      "ink linework, clean bright digital painting underneath, soft watercolor wash " +
+      "background, large expressive eyes, and a warm hand-drawn paperback illustration " +
+      "feel.",
+  },
+  {
+    id: "warm-flat-storybook",
+    label: "Warm Flat Storybook",
+    prompt:
+      "Change the style of the video to a warm flat picture-book illustration: large rounded " +
+      "geometric figures, smooth matte local colors, deep navy accents, coral and golden " +
+      "orange pops, generous white space, and a cozy modern children’s book aesthetic.",
+  },
+  {
+    id: "pastel-sketch",
+    label: "Pastel Story Sketch",
+    prompt:
+      "Change the style of the video to a pastel emotional story sketch: blue ink line " +
+      "drawings, large white negative space, one vivid orange object as the focal accent, " +
+      "slightly asymmetrical faces, gentle narrative mood, and a delicate hand-painted " +
+      "illustration atmosphere.",
+  },
+  {
+    id: "lego",
+    label: "LEGO",
+    prompt:
+      "Change the style of the video to a LEGO stop-motion animation: the person is a " +
+      "yellow LEGO minifigure with a cylindrical head, painted face, and claw hands, " +
+      "while the room is built in glossy plastic LEGO bricks with visible studs on " +
+      "every surface.",
   },
   { id: "custom", label: "Custom ✨", prompt: null },
 ];
