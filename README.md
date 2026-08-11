@@ -1,6 +1,8 @@
-# Finger Frame Live AI 🎬⚡
+[en](/README.md) [简体中文](/README_zh.md)
 
-**Try it: https://sophiamyang.github.io/finger-frame-effect-lucy/**
+# Finger Frame RealTime Live AI 🎬⚡
+
+**Try it: https://jinwyp.github.io/finger-frame-effect/**
 
 Hold up both hands and frame a box with your fingers — and see a **live,
 real-time AI world inside the frame**, generated at 30fps by
@@ -38,7 +40,7 @@ camera ([full-quality mp4](examples/lucy.mp4)).*
 ## Bring your own key
 
 Get a key at [platform.decart.ai](https://platform.decart.ai/), paste it in
-the 🔑 panel. It stays in your browser and is used only for the WebRTC
+the 🔑 panel. Free user will get 1000 credits for the first time. It stays in your browser and is used only for the WebRTC
 session with Decart. Without a key, the window falls back to a local color
 filter so the tracking is still demoable.
 
